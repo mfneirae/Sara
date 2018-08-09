@@ -26,8 +26,11 @@ cwd = 'browser = webdriver.Chrome(executable_path=r"'+ pwd +'\chromedriver.exe")
 exec (cwd)
 browser.get('http://sara.unal.edu.co/saraweb/webcommon/acceso.jspx');
 NameLogin = browser.find_element_by_name('login:usuario')
+#NameLogin.send_keys('maguzmanp')
 NameLogin.send_keys('mfneirae')
 PassLogin = browser.find_element_by_name('login:password')
 PassLogin.send_keys('test123' + Keys.RETURN)
 time.sleep(5) # Let the user actually see something!
 browser.quit()
+
+DraSaChaPiPo2019
