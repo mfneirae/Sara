@@ -28,8 +28,8 @@ import getpass
 
 #INGRESAR USUARIO
 
-#username = input('Ingrese su usuario UNAL:             ')
-#password = getpass.getpass('Ingrese la contraseña de su correo:             ')
+username = input('Ingrese su usuario UNAL:             ')
+password = getpass.getpass('Ingrese la contraseña de su correo:             ')
 delay = int(input('Ingrese el número en segundos de delay:             '))
 #APERTURA DEL NAVEGADOR
 pwd = os.getcwd()
@@ -46,12 +46,12 @@ PassLogin.send_keys(password + Keys.RETURN)
 
 #INGRESO AL SARA
 
-time.sleep(delay + 1)
+time.sleep(delay + 1.5)
 thing = browser.find_element_by_id('popupMopdulo:j_id407:1:j_id411').click()
-time.sleep(delay + 1)
+time.sleep(delay + 1.5)
 thing = browser.find_element_by_id('popupBusqueda_form:j_id425:0:j_id437')
 thing.click()
-time.sleep(delay + 1)
+time.sleep(delay + 1.5)
 thing = browser.find_element_by_id('formSalir:j_id43:j_id44:j_id652')
 time.sleep(delay)
 Hover = ActionChains(browser).move_to_element(thing)
@@ -61,12 +61,12 @@ link = browser.find_element_by_xpath("//span[contains(text(),'Consultar Prog. Tr
 time.sleep(delay)
 link = browser.find_element_by_xpath("//select[@id='listadoJornadaDocente_form:j_id69']/option[text()='PERIODO ACADEMICO 2018 PARA DOCENTES DE PLANTA']").click()
 time.sleep(delay)
-link = browser.find_element_by_xpath("//select[@id='listadoJornadaDocente_form:j_id79']/option[text()='Autorizado']").click()
+#link = browser.find_element_by_xpath("//select[@id='listadoJornadaDocente_form:j_id79']/option[text()='Autorizado']").click()
+link = browser.find_element_by_xpath("//select[@id='listadoJornadaDocente_form:j_id79']/option[text()='Aprobado']").click()
 time.sleep(delay)
 link = browser.find_element_by_xpath("//span[@id='listadoJornadaDocente_form:j_id96']").click()
-time.sleep(delay)
+time.sleep(delay + 1)
 link = browser.find_element_by_xpath("//a[@id='listadoJornadaDocente_form:j_id97:0.1']").click()
-
 
 # time.sleep(5)
 # browser.quit()
